@@ -48,22 +48,22 @@ int hsh(info_t *info, char **av)
  * @info: the parameter & return info struct
  *
  * Return: -1 if builtin not found,
- *	0 if builtin executed successfully,
- *	1 if builtin found but not successful,
- *	2 if builtin signals exit()
+ * 	0 if builtin executed successfully,
+ * 	1 if builtin found but not successful,
+ * 	2 if builtin signals exit()
  */
 int find_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", exit},
-		{"env", _env},
-		{"help", _help},
-		{"history", _history},
-		{"setenv", setenv},
-		{"unsetenv", unsetenv},
-		{"cd", _cd},
-		{"alias", _alias},
+		{"exit", _myexit},
+		{"env", _myenv},
+		{"help", _myhelp},
+		{"history", _myhistory},
+		{"setenv", _mysetenv},
+		{"unsetenv", _myunsetenv},
+		{"cd", _mycd},
+		{"alias", _myalias},
 		{NULL, NULL}
 	};
 
